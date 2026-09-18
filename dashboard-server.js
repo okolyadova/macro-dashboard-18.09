@@ -4,7 +4,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const PORT = Number(process.env.PORT || 8767);
+const PORT = Number(process.env.PORT || 8768);
 const HOST = process.env.HOST || (process.env.RENDER ? '0.0.0.0' : '127.0.0.1');
 const HTML = path.join(__dirname, 'index.html');
 const PRIVATE_TOKEN_FILE = path.join(__dirname, '..', '..', 'work', '.eodhd-token');
@@ -125,7 +125,8 @@ const server = http.createServer(async (req, res) => {
     const method = parsed.pathname === '/api/cbr/key' ? 'POST' : 'GET';
     const cacheKey = method === 'GET' ? target.toString() : null;
     const hit = cacheKey && cache.get(cacheKey);
-    if (hit && Date.now() - hit.time < 15 * 60 * 1000) {
+    const cacheLifetime = parsed.pathname === '/api/moex' ? 60 * 1000 : 15 * 60 * 1000;
+    if (hit && Date.now() - hit.time < cacheLifetime) {
       res.writeHead(hit.status, hit.headers); res.end(hit.body); return;
     }
     const chunks = [];

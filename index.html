@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Financial Market Dashboard · 17 September 2026 Version</title>
+<title>Financial Market Dashboard · 18 September 2026 Version</title>
 <style>
 :root{color-scheme:dark;--bg:#08121f;--panel:#111f30;--line:#26394d;--text:#eef4f9;--muted:#94a9bb;--red:#ff7280;--cyan:#72d7dc;--green:#83d6aa}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -20%,#173551 0,transparent 42%),var(--bg);color:var(--text);font:14px/1.4 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}.wrap{max-width:1390px;margin:auto;padding:34px 28px 56px}.top{display:flex;justify-content:space-between;gap:20px;align-items:start;border-bottom:1px solid var(--line);padding-bottom:22px}.eyebrow,.num{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.top h1{font-size:clamp(24px,3vw,34px);line-height:1.1;letter-spacing:-.035em;margin:8px 0 6px}.subtitle{color:var(--muted);margin:0}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.btn{border:1px solid var(--line);background:#16283b;color:var(--text);border-radius:9px;padding:9px 12px}.btn:hover{border-color:var(--cyan)}.datebar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:20px 0 28px;padding:12px 15px;border:1px solid var(--line);border-radius:11px;background:#0f1d2d}.datebar strong{font-size:13px}.status{color:var(--muted);font-size:12px;text-align:right}.module{margin-top:28px}.modulehead{display:flex;align-items:baseline;gap:13px;margin-bottom:12px}.module h2{font-size:18px;letter-spacing:-.02em;margin:0}.module .context{color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.card{min-height:151px;background:linear-gradient(150deg,#142438,#101e2e);border:1px solid var(--line);border-radius:12px;padding:17px;display:flex;flex-direction:column;min-width:0}.label{font-size:11px;letter-spacing:.12em;font-weight:750;color:#a9c1d0;text-transform:uppercase}.value{margin:17px 0 5px;font-size:clamp(20px,2.1vw,29px);font-weight:760;letter-spacing:-.04em;white-space:nowrap}.unit{font-size:.53em;letter-spacing:0;color:var(--muted);font-weight:650}.value.stale,.asof{color:var(--red)}.cardbottom{margin-top:auto;min-height:29px}.meta{font-size:11px;color:var(--muted);overflow-wrap:anywhere}.asof{font-size:11px;font-weight:720;margin-top:2px}.changes{display:flex;flex-wrap:wrap;gap:6px;margin:5px 0 8px}.change{border:1px solid #345063;background:#132d3b;border-radius:5px;padding:3px 6px;font-size:11px;white-space:nowrap}.change .tag{color:#95b5c6;margin-right:4px}.change.negative{color:var(--red)}.change.positive{color:var(--green)}.error{font-size:11px;color:#efb3b8;margin:3px 0 7px}.foot{border-top:1px solid var(--line);margin-top:32px;padding-top:14px;color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot a,.help a{color:var(--cyan)}dialog{background:#122236;color:var(--text);border:1px solid #3d566a;border-radius:13px;max-width:520px;width:calc(100% - 28px);padding:22px;box-shadow:0 25px 80px #0009}dialog::backdrop{background:#000a}dialog h3{margin:0 0 8px;font-size:20px}dialog p{color:var(--muted);font-size:13px}.field{display:grid;gap:5px;margin:15px 0}.field input{width:100%;border:1px solid #456075;background:#081725;color:var(--text);padding:10px;border-radius:7px}.dialogactions{display:flex;justify-content:flex-end;gap:9px}.help{font-size:11px;color:var(--muted)}@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:590px){.wrap{padding:22px 15px 40px}.top{display:block}.actions{justify-content:flex-start;margin-top:17px}.grid{grid-template-columns:1fr}.card{min-height:135px}.datebar{align-items:start;flex-direction:column}.status{text-align:left}.modulehead{flex-wrap:wrap}.value{font-size:27px}}
@@ -163,6 +163,77 @@
 @media(max-width:590px){.dashboard-header h1{font-size:18px}.dashboard-header .status{font-size:11px}.dashboard-header .refresh-btn{padding:7px 9px}.module .card{min-height:124px}}
 @media(min-width:1100px){.module h2{font-size:18px}.modulehead{padding:4px 10px;min-height:32px}.module .card{padding:9px}.adtv-card .label{min-height:40px}.metric-row{margin:6px 0 4px}.module .value{margin-top:9px}.metric-note{margin:3px 0 5px}.changes{margin:2px 0 4px}#macroGrid .card .label{min-height:30px}#macroGrid .history-wrap{top:36px}#macroGrid .card{padding:9px 10px 28px}}
 @media(min-width:1100px){.wrap{padding-bottom:0}.module{padding:8px}.foot{margin-top:8px}}
+.dashboard-header{margin-bottom:8px}
+.module + .module{margin-top:20px}
+.modulehead{margin-bottom:11px}
+.changes{margin: auto 0 4px;gap:6px 14px;align-items:center}
+.change{border:0;background:transparent;border-radius:0;padding:0;font-size:14px}
+.cardbottom{margin-top:0}
+.metric-note,#curaGrid .metric-note{font-size:11px;font-weight:400;line-height:1.4;color:var(--muted);margin:4px 0 6px}
+.module:nth-of-type(3),.module:nth-of-type(3) .modulehead{background:#cbd3d9;border-color:#aebbc4;color:#263642}
+.module:nth-of-type(3) .card{background:#e8ecef;border-color:#b8c4cc;color:#263642}
+.module:nth-of-type(3) .label,.module:nth-of-type(3) .context,.module:nth-of-type(3) .num,.module:nth-of-type(3) .meta,.module:nth-of-type(3) .asof{color:#52616c}
+.module:nth-of-type(3) .value,.module:nth-of-type(3) .value.stale{color:#263642}
+.module:nth-of-type(3) .change{border:0;background:transparent;color:#263642}
+.module:nth-of-type(3) .change.positive{color:#24774e}
+.module:nth-of-type(3) .change.negative{color:#bd394c}
+.dashboard-header h1{font-weight:400}
+.adtv-card .label{min-height:0}
+.adtv-card .metric-row{margin:3px 0 11px}
+.adtv-card .warning{margin:0 0 7px}
+.module:nth-of-type(3),.module:nth-of-type(3) .modulehead{background:#9da9b2;border-color:#81909a}
+.module:nth-of-type(3) .card{background:#bac4ca;border-color:#93a2ab}
+/* 18 September palette: three restrained greys, with Macro as the darkest reference module. */
+:root{--green:#4af095;--red:#ff7580;--muted:#c4cdd3}
+.dashboard-header{margin-bottom:22px}
+.module:nth-of-type(1),.module:nth-of-type(1) .modulehead{background:#3c4851;border-color:#66747e;color:#f2f5f6}
+.module:nth-of-type(1) .card{background:#4c5963;border-color:#71808a}
+.module:nth-of-type(2),.module:nth-of-type(2) .modulehead{background:#505b63;border-color:#74818a;color:#f2f5f6}
+.module:nth-of-type(2) .card{background:#606d75;border-color:#82919a}
+.module:nth-of-type(3),.module:nth-of-type(3) .modulehead{background:#303840;border-color:#53606a;color:#e8edf0}
+.module:nth-of-type(3) .card{background:#404b54;border-color:#62717c;color:#f0f4f6}
+.module:nth-of-type(3) .label,.module:nth-of-type(3) .context,.module:nth-of-type(3) .num,.module:nth-of-type(3) .meta,.module:nth-of-type(3) .asof{color:#bdc8cf}
+.module:nth-of-type(3) .value,.module:nth-of-type(3) .value.stale{color:#f0f4f6}
+.module:nth-of-type(3) .change.positive,.change.positive{color:#4af095}
+.module:nth-of-type(3) .change.negative,.change.negative{color:#ff7580}
+#macroGrid .history-trigger{color:#e5e9ec;background:#65717a;border-color:#87939b}
+#macroGrid .history-trigger:hover,#macroGrid .history-trigger:focus-visible{background:#75818a;border-color:#aab4ba;color:#fff}
+.module:nth-of-type(1) .value.price-up,.module:nth-of-type(2) .value.price-up{color:#4af095}
+.module:nth-of-type(1) .value.price-down,.module:nth-of-type(2) .value.price-down{color:#ff7580}
+.module .metric-row:has(.value.price-up) .subvalue{color:#4af095}
+.module .metric-row:has(.value.price-down) .subvalue{color:#ff7580}
+.module .card{min-height:166px}
+.module:nth-of-type(3) .card{min-height:130px}
+.metric-row{margin-bottom:13px}
+.adtv-card .metric-row{margin-bottom:13px}
+.metric-note,#curaGrid .metric-note{margin-bottom:11px}
+.changes{padding-top:10px;border-top:1px solid #ffffff36;margin:auto 0 8px;gap:8px 16px}
+.changes .change + .change::before{content:'/';color:#c6d0d6;font-weight:400;margin-right:14px}
+.cardbottom{margin-top:8px}
+.module:nth-of-type(3) .cardbottom{margin-top:7px}
+/* Lighter grey revision; figures stay white and colour is reserved for changes. */
+.module:nth-of-type(1),.module:nth-of-type(1) .modulehead{background:#84919a;border-color:#a8b3ba}
+.module:nth-of-type(1) .card{background:#677680;border-color:#91a0a9}
+.module:nth-of-type(2),.module:nth-of-type(2) .modulehead{background:#99a5ad;border-color:#b5bec4}
+.module:nth-of-type(2) .card{background:#78868f;border-color:#a1aeb6}
+.module:nth-of-type(3),.module:nth-of-type(3) .modulehead{background:#5a6872;border-color:#83939d;color:#fff}
+.module:nth-of-type(3) .card{background:#667680;border-color:#899aa4;color:#fff}
+.module:nth-of-type(3) .label,.module:nth-of-type(3) .context,.module:nth-of-type(3) .num,.module:nth-of-type(3) .meta,.module:nth-of-type(3) .asof{color:#d8e0e5}
+.module:nth-of-type(1) .value,.module:nth-of-type(1) .value.stale,.module:nth-of-type(1) .value.signal-high,.module:nth-of-type(1) .value.signal-low,.module:nth-of-type(1) .value.price-up,.module:nth-of-type(1) .value.price-down,.module:nth-of-type(2) .value,.module:nth-of-type(2) .value.stale,.module:nth-of-type(2) .value.price-up,.module:nth-of-type(2) .value.price-down,.module:nth-of-type(3) .value,.module:nth-of-type(3) .value.stale{color:#fff}
+.module:nth-of-type(1) .value.neutral{color:#fff}
+.module .metric-row:has(.value.price-up) .subvalue,.module .metric-row:has(.value.price-down) .subvalue,.module .metric-row .subvalue{color:#fff}
+.change.positive,.module:nth-of-type(3) .change.positive{color:#70f4a4}
+.change.negative,.module:nth-of-type(3) .change.negative{color:#ff8590}
+#macroGrid .history-trigger{background:#87949d;border-color:#aab5bc;color:#fff}
+#macroGrid .history-trigger:hover,#macroGrid .history-trigger:focus-visible{background:#9ba7af;border-color:#c6ced3;color:#fff}
+.btn,.history-trigger,.forecast-trigger,.forecast-dialog .forecast-link{font-weight:400}
+/* Restored dashboard palette: navy, green and muted grey. */
+.module:nth-of-type(1),.module:nth-of-type(1) .modulehead{background:#202b3c;border-color:#465b79;color:#f2f6f9}
+.module:nth-of-type(1) .card{background:#2b394f;border-color:#52647e}
+.module:nth-of-type(2),.module:nth-of-type(2) .modulehead{background:#1b3232;border-color:#3b6560;color:#f2f6f9}
+.module:nth-of-type(2) .card{background:#294744;border-color:#46716c}
+.module:nth-of-type(3),.module:nth-of-type(3) .modulehead{background:#56636d;border-color:#74838e;color:#f2f6f9}
+.module:nth-of-type(3) .card{background:#66747e;border-color:#8998a1;color:#fff}
 @media(max-width:590px){.history-popover:popover-open{width:calc(100vw - 12px);padding:10px}.history-popover .adtv-history-table,.history-popover .forecast-table{font-size:14px}}
 </style>
 </head>
@@ -187,6 +258,7 @@ const weekday=d=>{const n=new Date(d+'T12:00:00Z').getUTCDay();return n!==0&&n!=
 const monthBack=d=>{const x=new Date(d+'T12:00:00Z'),day=x.getUTCDate();x.setUTCDate(1);x.setUTCMonth(x.getUTCMonth()-1);const m=x.getUTCMonth();x.setUTCDate(Math.min(day,new Date(Date.UTC(x.getUTCFullYear(),m+1,0)).getUTCDate()));return x.toISOString().slice(0,10)};
 const yearBack=d=>{const x=new Date(d+'T12:00:00Z');x.setUTCFullYear(x.getUTCFullYear()-1);return x.toISOString().slice(0,10)};
 const nice=d=>d?new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(d+'T12:00:00Z')):'—';
+const chartDate=d=>`${d.slice(8,10)} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(d.slice(5,7))-1]}`;
 const fixed=(v,n)=>Number(v).toLocaleString('en-US',{minimumFractionDigits:n,maximumFractionDigits:n});
 const integer=v=>Math.round(v).toLocaleString('en-US');
 const millionShares=v=>`${fixed(v/1e6,2)} mn shares`;
@@ -199,6 +271,7 @@ function card(label,obs,format,source,opts={}){let out=`<article class="card${op
 const currencyMark=currency=>({RUB:'₽',USD:'$',CAD:'CAD'})[currency]||currency;
 const money=(currency,dec=2)=>v=>`<span class="currency">${currencyMark(currency)}</span> ${fixed(v,dec)}`;
 const count=v=>integer(v);
+const priceSignal=change=>change==null?'':change>0?'price-up':change<0?'price-down':'';
 const rate=v=>`${fixed(v,2)}<span class="unit">%</span>`;
 const cap=currency=>v=>`<span class="currency">${currencyMark(currency)}</span> ${fixed(v/1e9,2)} <span class="unit">bn</span>`;
 const show=(id,cards)=>$(id).innerHTML=cards.join('');
@@ -206,7 +279,7 @@ const loadingCard=label=>`<article class="card loading-card"><div class="label">
 const historyFor=(observation,days=10)=>Array.from({length:days},(_,index)=>{const day=shift(TODAY,-index-1),item=observation(day);return {day,...item,asOf:item?.date||null,value:item?.value||'—'}});
 function tablePanels(rows,headers,renderRow){const parts=rows.length>15?[rows.slice(0,15),rows.slice(15)]:[rows];return `<div class="history-panels">${parts.map(part=>`<table><thead><tr>${headers.map(x=>`<th>${esc(x)}</th>`).join('')}</tr></thead><tbody>${part.map(renderRow).join('')}</tbody></table>`).join('')}</div>`}
 function dataBarCell(value,values){if(!Number.isFinite(value))return '<td>—</td>';const lo=Math.min(...values),hi=Math.max(...values),ratio=hi===lo?1:Math.max(0,Math.min(1,(value-lo)/(hi-lo))),width=Math.round(18+82*ratio);return `<td class="bar-cell"><div class="bar-content"><span class="bar-number">${fixed(value/1e6,1)}</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:${width}%"></span></span></div></td>`}
-function chartSvg(rows,key,label,color){const data=[...rows].reverse().map((r,i)=>({index:i,day:r.day,value:Number(r[key])})).filter(x=>Number.isFinite(x.value)&&x.value>0);if(!data.length)return `<p>${esc(label)}: data unavailable</p>`;const values=data.map(x=>x.value),lo=Math.min(...values),hi=Math.max(...values),span=hi-lo||Math.max(hi*.02,.01),bottom=hi===lo?lo-span/2:lo-span*.12,top=hi===lo?hi+span/2:hi+span*.12;const x=i=>43+i*634/Math.max(rows.length-1,1),y=v=>110-(v-bottom)*69/(top-bottom);const path=data.map((p,i)=>`${i?'L':'M'}${x(p.index).toFixed(1)},${y(p.value).toFixed(1)}`).join(' ');return `<div class="chart-title">${esc(label)}</div><div class="chart-scroll"><svg class="chart-svg" viewBox="0 0 720 150" role="img" aria-label="${esc(label)} over the previous ${rows.length} days"><line x1="43" y1="110" x2="677" y2="110" stroke="#b7c3cb"/><path d="${path}" fill="none" stroke="${color}" stroke-width="2.5"/>${data.map(p=>`<circle cx="${x(p.index).toFixed(1)}" cy="${y(p.value).toFixed(1)}" r="3.5" fill="${color}"><title>${nice(p.day)}: ${fixed(p.value,2)}</title></circle><text x="${x(p.index).toFixed(1)}" y="${(y(p.value)-8).toFixed(1)}" text-anchor="middle" font-size="11" fill="#243742">${fixed(p.value,2)}</text>`).join('')}${data.map(p=>`<text x="${x(p.index).toFixed(1)}" y="142" text-anchor="middle" font-size="11" fill="#50616c">${p.day.slice(5)}</text>`).join('')}</svg></div>`}
+function chartSvg(rows,key,label,color){const data=[...rows].reverse().map((r,i)=>({index:i,day:r.day,value:Number(r[key])})).filter(x=>Number.isFinite(x.value)&&x.value>0);if(!data.length)return `<p>${esc(label)}: data unavailable</p>`;const values=data.map(x=>x.value),lo=Math.min(...values),hi=Math.max(...values),span=hi-lo||Math.max(hi*.02,.01),bottom=hi===lo?lo-span/2:lo-span*.12,top=hi===lo?hi+span/2:hi+span*.12;const x=i=>58+i*644/Math.max(rows.length-1,1),y=v=>137-(v-bottom)*78/(top-bottom);const path=data.map((p,i)=>`${i?'L':'M'}${x(p.index).toFixed(1)},${y(p.value).toFixed(1)}`).join(' ');return `<div class="chart-title">${esc(label)}</div><div class="chart-scroll"><svg class="chart-svg" viewBox="0 0 760 195" role="img" aria-label="${esc(label)} over the previous ${rows.length} days"><line x1="58" y1="145" x2="702" y2="145" stroke="#b7c3cb"/><path d="${path}" fill="none" stroke="${color}" stroke-width="2.5"/>${data.map(p=>`<circle cx="${x(p.index).toFixed(1)}" cy="${y(p.value).toFixed(1)}" r="3.5" fill="${color}"><title>${nice(p.day)}: ${fixed(p.value,2)}</title></circle><text x="${x(p.index).toFixed(1)}" y="${(y(p.value)-13).toFixed(1)}" text-anchor="middle" font-size="22" fill="#243742">${fixed(p.value,2)}</text>`).join('')}${data.map(p=>`<text x="${x(p.index).toFixed(1)}" y="185" text-anchor="middle" font-size="22" fill="#50616c">${chartDate(p.day)}</text>`).join('')}</svg></div>`}
 function historyControl(label,rows,type){
   let content;
   if(type==='adtv'){
@@ -218,7 +291,7 @@ function historyControl(label,rows,type){
   }else{
     content=tablePanels(rows,['Date','Value'],row=>`<tr><td>${nice(row.day)}</td><td>${row.value}${row.asOf&&row.asOf!==row.day?`<small>As of ${nice(row.asOf)}</small>`:''}</td></tr>`);
   }
-  return `<div class="history-wrap"><button class="history-trigger" type="button" aria-label="${rows.length} day history for ${esc(label)}" aria-expanded="false">${rows.length}d history</button><div class="history-popover${type==='adtv'?' adtv-popover':''}" popover="manual" role="region" aria-label="History for ${esc(label)}"><h3>${esc(label)} · ${rows.length}d history</h3><p>${type==='adtv'?'Previous 30 trading sessions. Daily cash turnover and the rolling 20-session average.':`Previous ${rows.length} calendar days. Earlier observations show their actual date.`}</p>${content}</div></div>`;
+  return `<div class="history-wrap"><button class="history-trigger" type="button" aria-label="${rows.length} day History for ${esc(label)}" aria-expanded="false">${rows.length}d History</button><div class="history-popover${type==='adtv'?' adtv-popover':''}" popover="manual" role="region" aria-label="History for ${esc(label)}"><h3>${esc(label)} · ${rows.length}d History</h3><p>${type==='adtv'?'Previous 30 trading sessions. Daily cash turnover and the rolling 20-session average.':`Previous ${rows.length} calendar days. Earlier observations show their actual date.`}</p>${content}</div></div>`;
 }
 function forecastControl(forecast){const content=forecast.rows.length?`<p class="forecast-note">Scenario: each future trading session uses the average Daily turnover of the last seven actual MOEX sessions, ₽ ${fixed(forecast.baseTurnover/1e6,1)} mn as of ${nice(forecast.baseDate)}. Future exchange holidays are not included in this weekday schedule.</p><table class="forecast-table"><thead><tr><th>Date</th><th>Assumed turnover, ₽ mn</th><th>20d ADTV, ₽ mn</th></tr></thead><tbody>${forecast.rows.map(row=>`<tr class="${row.adtv<50000000?'forecast-danger':row.adtv<60000000?'forecast-warning':''}"><td>${nice(row.day)}</td><td>${fixed(row.daily/1e6,1)}</td><td>${fixed(row.adtv/1e6,1)}</td></tr>`).join('')}</tbody></table><p class="bar-note">Pink rows are below ₽60 mn; red rows are below ₽50 mn.</p>`:'<p>Twenty trading sessions are required before a forecast can be calculated.</p>';return `<div class="history-wrap forecast-wrap"><button class="history-trigger forecast-trigger" type="button" aria-label="7 day ADTV forecast" aria-expanded="false">7d Forecast</button><div class="history-popover forecast-popover" popover="manual" role="region" aria-label="7 day ADTV forecast"><h3>20D ADTV · 7d Forecast</h3>${content}</div></div>`}
 function dataUrl(url){if(!SERVER_MODE)return url;const u=new URL(url);let path;if(u.hostname==='www.cbr.ru'&&u.pathname==='/scripts/XML_daily.asp')path='/api/cbr/daily';else if(u.hostname==='www.cbr.ru'&&u.pathname==='/scripts/XML_dynamic.asp')path='/api/cbr/range';else if(u.hostname==='www.cbr.ru'&&u.pathname==='/DailyInfoWebServ/DailyInfo.asmx')path='/api/cbr/key';else if(u.hostname==='www.bankofcanada.ca')path='/api/boc';else if(u.hostname==='iss.moex.com')path='/api/moex';else if(u.hostname==='fred.stlouisfed.org'&&u.pathname==='/graph/fredgraph.csv')path='/api/fed';else if(u.hostname==='eodhd.com'&&u.pathname==='/api/eod/CURA.TO')path='/api/eod/history';else if(u.hostname==='eodhd.com'&&u.pathname==='/api/v1.1/fundamentals/CURA.TO')path='/api/eod/shares';else throw Error('Unrecognized data source');const out=new URL(path,location.origin);for(const [key,value] of u.searchParams)if(key!=='api_token')out.searchParams.set(key,value);return out}
@@ -274,8 +347,8 @@ function renderReni(rows,cbr){
   if(forecastRows.some(row=>row.adtv<60000000)&&!forecastAlertShown){forecastAlertShown=true;$('forecastAlert').showModal()}
   show('reniGrid',[
     card('20D ADTV · cash / shares',avg,v=>`${money('RUB')(v/1e6)} <span class="unit">mn</span>`,'MOEX · TQBR',{note:'Cash average over 20 trading days',afterValue:avg?`<div class="subvalue">/ ${millionShares(avg.volume)}</div>`:'',inlineValue:true,warning,error:'20 trading days not available',signal:v=>v>50000000?'signal-high':v<50000000?'signal-low':'',changes:adtvChanges,history:adtvHistory,historyType:'adtv',forecast}),
-    card('Close · RUB / USD',current,money('RUB'),'MOEX · TQBR / Bank of Russia FX',{valueClass:'neutral',afterValue:usdLine,inlineValue:true,changes:priceChanges,note:'Changes in RUB',history:closeHistory,historyType:'chart'}),
-    card('Market capitalization',capNow,cap('RUB'),'MOEX close × issued shares / Bank of Russia FX',{afterValue:capUsdLine,inlineValue:true,detail:millionShares(RENI_SHARES),changes:priceChanges,note:'Changes in RUB',history:capHistory,historyType:'chart'})
+    card('Close · RUB / USD',current,money('RUB'),'MOEX · TQBR / Bank of Russia FX',{valueClass:'neutral',signal:()=>priceSignal(priceChanges[0].value),afterValue:usdLine,inlineValue:true,changes:priceChanges,note:'Changes in RUB',history:closeHistory,historyType:'chart'}),
+    card('Market capitalization',capNow,cap('RUB'),'MOEX close × issued shares / Bank of Russia FX',{signal:()=>priceSignal(priceChanges[0].value),afterValue:capUsdLine,inlineValue:true,detail:`${integer(RENI_SHARES)} shares`,changes:priceChanges,note:'Changes in RUB',history:capHistory,historyType:'chart'})
   ])
 }
 function renderCura(prices,fx,shares,reason){
@@ -289,11 +362,11 @@ function renderCura(prices,fx,shares,reason){
   const priceHistory=historyFor(day=>{const p=latest(prices,day);if(!p)return null;const f=fx.find(x=>x.date===p.date);return {date:p.date,value:`${money('CAD')(p.value)} / ${f?money('USD')(p.value*f.value):'$ —'}`,number:p.value,second:f?p.value*f.value:null}});
   const capHistory=historyFor(day=>{const p=latest(common,day),x=capitalization(p);return x&&{date:x.date,value:cap('USD')(x.value),number:x.value/1e9}});
   show('curaGrid',[
-    card('Close price · CAD / USD',cad,money('CAD'),'EODHD · TSX / Bank of Canada FX',{afterValue:usdLine,inlineValue:true,changes:priceChanges,note:'Changes in CAD',error:reason,history:priceHistory,historyType:'chart'}),
-    card('Market capitalization',now,cap('USD'),'Close × same-day FX × reported shares',{detail:now?millionShares(now.shares):null,changes,error:reason||'Date-consistent inputs unavailable',note:now?`Shares reported ${nice(now.sharesDate)}`:null,history:capHistory,historyType:'chart'})
+    card('Close price · CAD / USD',cad,money('CAD'),'EODHD · TSX / Bank of Canada FX',{signal:()=>priceSignal(priceChanges[0].value),afterValue:usdLine,inlineValue:true,changes:priceChanges,note:'Changes in CAD',error:reason,history:priceHistory,historyType:'chart'}),
+    card('Market capitalization',now,cap('USD'),'Close × same-day FX × reported shares',{signal:()=>priceSignal(changes[0].value),detail:now?`${integer(now.shares)} shares`:null,changes,error:reason||'Date-consistent inputs unavailable',note:now?`Shares reported ${nice(now.sharesDate)}`:null,history:capHistory,historyType:'chart'})
   ])
 }
-async function load(){TODAY=dashboardDay();$('dashboardDate').textContent=`Financial Dashboard as of ${new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(TODAY+'T12:00:00Z'))}`;const refresh=$('refreshBtn');if(location.protocol==='file:'){$('status').innerHTML='Open start-dashboard.cmd, then use <a href="http://127.0.0.1:8767/">the local dashboard</a> to load data.';refresh.disabled=true;return}refresh.disabled=true;$('status').textContent='Loading source data…';renderMacro([],[],[],[]);renderReni([],[]);const hasEod=SERVER_MODE||!!token;renderCura([],[],[],hasEod?'Loading…':'Add an EODHD token in Data access');const jobs=await Promise.allSettled([cbrFx(),cbrKey(),bocFx(),reniHistory(),fedRange(),...(hasEod?[eodHistory(),eodShares()]:[])]);const result=i=>jobs[i]?.status==='fulfilled'?jobs[i].value:[];renderMacro(result(0),result(1),result(2),result(4));renderReni(result(3),result(0));const eodError=jobs[5]?.status==='rejected'?`EODHD price feed: ${jobs[5].reason.message}`:jobs[6]?.status==='rejected'?`EODHD shares feed: ${jobs[6].reason.message}`:null;renderCura(result(5),result(2),result(6),hasEod?eodError:'EODHD token required');const failures=jobs.filter(x=>x.status==='rejected').length;const updateTime=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Nicosia'}).format(new Date());$('status').textContent=[failures?`${failures} feeds could not load`:`Checked ${updateTime} Cyprus time`,!hasEod?'Curaleaf requires EODHD token':null].filter(Boolean).join(' · ');refresh.disabled=false}
+async function load(){TODAY=dashboardDay();$('dashboardDate').textContent=`Financial Dashboard as of ${new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(TODAY+'T12:00:00Z'))}`;const refresh=$('refreshBtn');if(location.protocol==='file:'){$('status').innerHTML='Open start-dashboard.cmd, then use <a href="http://127.0.0.1:8768/">the local dashboard</a> to load data.';refresh.disabled=true;return}refresh.disabled=true;$('status').textContent='Loading source data…';renderMacro([],[],[],[]);renderReni([],[]);const hasEod=SERVER_MODE||!!token;renderCura([],[],[],hasEod?'Loading…':'Add an EODHD token in Data access');const jobs=await Promise.allSettled([cbrFx(),cbrKey(),bocFx(),reniHistory(),fedRange(),...(hasEod?[eodHistory(),eodShares()]:[])]);const result=i=>jobs[i]?.status==='fulfilled'?jobs[i].value:[];renderMacro(result(0),result(1),result(2),result(4));renderReni(result(3),result(0));const eodError=jobs[5]?.status==='rejected'?`EODHD price feed: ${jobs[5].reason.message}`:jobs[6]?.status==='rejected'?`EODHD shares feed: ${jobs[6].reason.message}`:null;renderCura(result(5),result(2),result(6),hasEod?eodError:'EODHD token required');const failures=jobs.filter(x=>x.status==='rejected').length;const updateTime=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Nicosia'}).format(new Date());$('status').textContent=[failures?`${failures} feeds could not load`:`Checked ${updateTime} Cyprus time`,!hasEod?'Curaleaf requires EODHD token':null].filter(Boolean).join(' · ');refresh.disabled=false}
 function beginLoad(){const job=load();if(location.protocol!=='file:'){show('reniGrid',[loadingCard('Close · RUB / USD'),loadingCard('20D ADTV · cash / shares'),loadingCard('Market capitalization')]);show('curaGrid',[loadingCard('Close price · CAD / USD'),loadingCard('Market capitalization')]);show('macroGrid',[loadingCard('USD / RUB'),loadingCard('EUR / RUB'),loadingCard('CAD / USD'),loadingCard('Bank of Russia key rate'),loadingCard('Fed funds target range')])}return job}
 function closePopup(wrap){const popup=wrap.querySelector('.history-popover');if(popup?.matches(':popover-open'))popup.hidePopover();wrap.classList.remove('open');wrap.querySelector('button')?.setAttribute('aria-expanded','false')}
 function positionPopup(wrap){const popup=wrap.querySelector('.history-popover'),button=wrap.querySelector('.history-trigger');if(!popup.matches(':popover-open'))popup.showPopover();const height=popup.getBoundingClientRect().height,rect=button.getBoundingClientRect(),macro=!!wrap.closest('#macroGrid');let top=macro?rect.top-height-7:rect.bottom+7;if(top+height>innerHeight-6)top=rect.top-height-7;popup.style.top=`${Math.max(6,top)}px`}
@@ -306,6 +379,8 @@ $('showForecast').onclick=event=>{event.stopPropagation();$('forecastAlert').clo
 $('dashboardDate').textContent=`Financial Dashboard as of ${new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(TODAY+'T12:00:00Z'))}`;$('settingsBtn').hidden=SERVER_MODE;$('settingsBtn').onclick=()=>$('settings').showModal();$('cancelSettings').onclick=()=>$('settings').close();$('saveSettings').onclick=()=>{token=$('token').value.trim();$('settings').close();beginLoad()};$('refreshBtn').onclick=beginLoad;beginLoad();setInterval(()=>{if(!document.hidden)beginLoad()},15*60*1000);
 })();
 </script></body></html>
+
+
 
 
 
