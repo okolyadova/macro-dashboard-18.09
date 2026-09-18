@@ -21,6 +21,14 @@ function upstream(requestUrl) {
       out.searchParams.set('date_req', q.get('date_req') || '');
       return out;
     }
+    case '/api/cbr/range': {
+      const out = new URL('https://www.cbr.ru/scripts/XML_dynamic.asp');
+      for (const key of ['date_req1', 'date_req2']) out.searchParams.set(key, q.get(key) || '');
+      const code = q.get('VAL_NM_RQ');
+      if (!['R01235', 'R01239'].includes(code)) return null;
+      out.searchParams.set('VAL_NM_RQ', code);
+      return out;
+    }
     case '/api/cbr/key':
       return new URL('https://www.cbr.ru/DailyInfoWebServ/DailyInfo.asmx');
     case '/api/boc': {
